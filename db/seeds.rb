@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# frozen_string_literal: true
+
+['Python', 'Ruby on Rails', 'Go', 'Elixir'].each do |title|
+  Course.create(title: title)
+end
+
+course = Course.find_by(title: 'Python')
+Random.rand(1..5).times do |count|
+  course.groups.create(start_date: 1.year.ago + count.week)
+end
+course = Course.find_by(title: 'Ruby on Rails')
+Random.rand(1..5).times do |count|
+  course.groups.create(start_date: 1.week.ago + count.week)
+end
+course = Course.find_by(title: 'Go')
+Random.rand(1..5).times do |count|
+  course.groups.create(start_date: 1.year.from_now + count.week)
+end
+
+Student.create(email: 'nothing@test.com')
+student = Student.create(email: 'all@test.com')
+Group.all.each { |group| group.participations.create(student: student) }

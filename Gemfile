@@ -11,6 +11,8 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
@@ -18,13 +20,13 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'activeadmin'
-gem 'devise'
 
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rubocop', require: false
+  gem "rspec-rails", "~> 3.9"
 end
 
 group :development do
@@ -35,6 +37,8 @@ group :development do
 end
 
 group :test do
+  gem "database_cleaner", "~> 1.7"
+  gem "ffaker", "~> 2.13.0"
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'

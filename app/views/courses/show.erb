@@ -1,0 +1,23 @@
+<h1>Groups for <%= @course.title %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Students</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= I18n.l(group.start_date) %></td>
+        <td><%= group.students.pluck(:email).join(', ') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% if !@groups.blank? %>
+  <%= render "participations/form" %>
+<% end %>

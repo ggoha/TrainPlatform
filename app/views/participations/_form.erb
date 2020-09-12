@@ -1,0 +1,6 @@
+<%= form_with model: @participation do |f| %>
+  <p id="error_explanation"></p>
+  <%= f.email_field :email, placeholder: "your@email.com", required: true %>
+  <%= f.select :group_id, options_for_select %>
+  <%= f.submit "Create" %>
+<% end %>

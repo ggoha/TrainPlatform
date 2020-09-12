@@ -16,6 +16,7 @@
 #
 default: &default
   adapter: postgresql
+  username: postgres
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -81,5 +82,4 @@ test:
 production:
   <<: *default
   database: TrainPlatform_production
-  username: TrainPlatform
   password: <%= ENV['TRAINPLATFORM_DATABASE_PASSWORD'] %>
