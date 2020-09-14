@@ -11,7 +11,7 @@
     <% @results.each do |result| %>
       <tr>
         <td><%= link_to result['title'], course_path(result['id'])  %></td>
-        <td><%= date_dummy(result['start_date']) %></td>
+        <td><%= dummy_date(result['start_date']) %></td>
         <td><%= dummy(result['students_count']) %></td>
       </tr>
     <% end %>

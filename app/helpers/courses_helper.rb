@@ -5,7 +5,7 @@ module CoursesHelper
     value || '-'
   end
 
-  def date_dummy(value)
+  def dummy_date(value)
     value ? I18n.l(value) : I18n.t('soon')
   end
 end

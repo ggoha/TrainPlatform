@@ -9,7 +9,7 @@ Random.rand(1..5).times do |count|
   course.groups.create(start_date: 1.year.ago + count.week)
 end
 course = Course.find_by(title: 'Ruby on Rails')
-Random.rand(1..5).times do |count|
+Random.rand(2..5).times do |count|
   course.groups.create(start_date: 1.week.ago + count.week)
 end
 course = Course.find_by(title: 'Go')
